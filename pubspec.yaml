@@ -1,7 +1,7 @@
-name: pip_clients_activities_dart
-description: Clients Party Activities microservice for Pip.Services in Dart
+name: pip_clients_activities
+version: "1.0.0"
 author: Sergey Seroukhov <seroukhov@gmail.com>
-version: 1.0.0
+description: Clients Party Activities microservice for Pip.Services in Dart
 homepage: https://github.com/pip-services-users/pip-clients-activities-dart
 
 environment:
@@ -15,6 +15,7 @@ dependencies:
   pip_services3_rpc: ">=1.0.2 <2.0.0"
   pip_services3_grpc: ">=1.0.0 <2.0.0"
   pip_services3_container: ">=1.0.0 <2.0.0"
+  pip_services_activities: ">=1.0.0 <2.0.0"
   http: "^0.12.0"
   angel_framework: ^2.1.1
 

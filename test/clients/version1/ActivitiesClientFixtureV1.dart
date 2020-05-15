@@ -1,26 +1,18 @@
+import 'package:pip_services_activities/pip_services_activities.dart';
 import 'package:test/test.dart';
 import 'package:pip_services3_commons/pip_services3_commons.dart';
 
-import 'package:pip_clients_activities_dart/pip_clients_activities_dart.dart';
+import 'package:pip_clients_activities/pip_clients_activities.dart';
 
 final ACTIVITY = PartyActivityV1(
     id: null,
     type: 'test',
     time: DateTime.now(),
-    party: ReferenceV1(
-        id: '1',
-        type: 'party',
-        name: 'Test User'
-    ),
-    ref_item: ReferenceV1(
-        id: '2',
-        type: 'party',
-        name: 'Admin User'
-    ),
+    party: ReferenceV1(id: '1', type: 'party', name: 'Test User'),
+    ref_item: ReferenceV1(id: '2', type: 'party', name: 'Admin User'),
     ref_parents: [],
     ref_party: null,
-    details: null
-);
+    details: null);
 
 class ActivitiesClientFixtureV1 {
   IActivitiesClientV1 _client;
@@ -34,10 +26,11 @@ class ActivitiesClientFixtureV1 {
     PartyActivityV1 activity1;
 
     // Log an activity batch
-    var activities = await _client.batchPartyActivities(null, [ACTIVITY, ACTIVITY, ACTIVITY]);
+    await _client.batchPartyActivities(null, [ACTIVITY, ACTIVITY, ACTIVITY]);
 
     // Get all activities
-    var page = await _client.getPartyActivities(null, FilterParams.fromTuples(['party_id', '1']), PagingParams());
+    var page = await _client.getPartyActivities(
+        null, FilterParams.fromTuples(['party_id', '1']), PagingParams());
     expect(page, isNotNull);
     expect(page.data.length, 3);
     activity1 = page.data[0];
@@ -46,5 +39,5 @@ class ActivitiesClientFixtureV1 {
     expect(ACTIVITY.party.id, activity1.party.id);
     expect(ACTIVITY.ref_item.name, activity1.ref_item.name);
     expect(activity1.time, isNotNull);
-  }  
+  }
 }

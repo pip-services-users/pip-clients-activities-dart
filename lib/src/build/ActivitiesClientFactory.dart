@@ -16,9 +16,9 @@ class ActivitiesClientFactory extends Factory {
   ActivitiesClientFactory() : super() {
     registerAsType(
         ActivitiesClientFactory.NullClientDescriptor, ActivitiesNullClientV1);
+    registerAsType(ActivitiesClientFactory.DirectClientDescriptor,
+        ActivitiesDirectClientV1);
     registerAsType(
-        ActivitiesClientFactory.DirectClientDescriptor, ActivitiesDirectClientV1);
-    registerAsType(ActivitiesClientFactory.HttpClientDescriptor,
-        ActivitiesHttpClientV1);
+        ActivitiesClientFactory.HttpClientDescriptor, ActivitiesHttpClientV1);
   }
 }

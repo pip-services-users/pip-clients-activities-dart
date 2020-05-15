@@ -1,4 +1,4 @@
-# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Activities Microservice Client SDK for Dart
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br> Activities Microservice Client SDK for Dart
 
 This is a Dart client SDK for [pip-services-activities](https://github.com/pip-services-users/pip-services-activities-dart) microservice.
 

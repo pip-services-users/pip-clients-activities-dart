@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:test/test.dart';
 import 'package:pip_services3_commons/pip_services3_commons.dart';
-import 'package:pip_clients_activities_dart/pip_clients_activities_dart.dart';
+import 'package:pip_clients_activities/pip_clients_activities.dart';
 import './ActivitiesClientFixtureV1.dart';
 
 var httpConfig = ConfigParams.fromTuples([
@@ -20,11 +20,13 @@ void main() {
     ActivitiesClientFixtureV1 fixture;
 
     setUp(() async {
-
       client = ActivitiesHttpClientV1();
       client.configure(httpConfig);
       var references = References.fromTuples([
-        Descriptor('pip-services-activities', 'client', 'http', 'default', '1.0'), client]);
+        Descriptor(
+            'pip-services-activities', 'client', 'http', 'default', '1.0'),
+        client
+      ]);
       client.setReferences(references);
       fixture = ActivitiesClientFixtureV1(client);
       await client.open(null);
